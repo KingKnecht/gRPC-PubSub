@@ -40,7 +40,7 @@ namespace gRPCTest
             public Subsriber(PubSub.PubSubClient pubSubClient)
             {
                 _pubSubClient = pubSubClient;
-            }
+            } 
 
             public async Task Subscribe()
             {
