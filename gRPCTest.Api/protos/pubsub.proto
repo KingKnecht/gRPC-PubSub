@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpcTest.api";
+option java_outer_classname = "PubSub";
+option objc_class_prefix = "PS";
+
+package pubsub;
+
+service PubSub {
+	 rpc Subscribe(Subscription) returns (stream Event) {}
+	 rpc Unsubscribe(Subscription) returns (Unsubscription) {}
+}
+
+message Event
+{
+	string Value = 1;
+}
+
+message Subscription
+{
+	string Id = 1;
+}
+
+message Unsubscription
+{
+	string Id = 1;
+}
